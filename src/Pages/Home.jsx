@@ -1,17 +1,18 @@
 import { Row, Col, Button } from "react-bootstrap";
 import "./../Components/Home/home.css";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="container home-container">
-      <Row className="d-flex ">
+      <Row className="d-flex justify-content-center align-items-center">
         <Col lg={6} md={12}>
           <h1 className="hero-home">Amor propio, Piel radiante</h1>
-          <Button>Ver servicios</Button>
+          <Link className="btn cta-btn">Ver servicios</Link>
         </Col>
-        <Col lg={6} md={12}>
+        <Col lg={6} md={12} className="d-flex justify-content-end">
           <img
-            className="img-responsive"
-            src="https://images.unsplash.com/photo-1577746838851-816a43ca8733?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
+            className="img-fluid w-100"
+            src="src\assets\images\Rectangle1.png"
             alt=""
           />
         </Col>
