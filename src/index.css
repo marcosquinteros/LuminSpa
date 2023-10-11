@@ -7,3 +7,42 @@
   font-family: 'Poppins', sans-serif;
   text-decoration: none !important;
 }
+
+.store-hair{
+  background-image: url('assets/images/hair.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #bacceb;
+  color: white;
+}
+
+.store-body{
+  background-image: url('assets/images/body.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #fedfde;
+  color: white;
+}
+
+.store-face{
+  background-image: url('assets/images/face.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #e0dfe6;
+  color: white;
+}
+
+.store-hair:hover{
+  transition: 0.8s ease-in-out;
+  font-size: xx-large;
+}
+
+.store-body:hover{
+  transition: 0.8s ease-in-out;
+  font-size: xx-large;
+}
+
+.store-face:hover{
+  transition: 0.8s ease-in-out;
+  font-size: xx-large;
+}

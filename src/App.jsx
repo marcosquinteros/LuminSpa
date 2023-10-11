@@ -14,6 +14,7 @@ import Register from "./Pages/Register";
 import Footer from "./Components/Layout/Footer";
 import Navbar from "./Components/Layout/Navbar";
 import Home from "./Pages/Home";
+import Store from "./Pages/Store";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Store />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
         </Routes>
