@@ -15,3 +15,49 @@
     border-radius: 5px !important;
     background-color: #fedfde !important;
 }
+
+/* home cards */
+.card-content {
+    scroll-snap-align: start;
+    border-radius: 25px;
+    box-shadow: 0px 10px 39px -19px rgba(0,0,0,0.75);
+    transition: all 200ms ease;
+    padding: 10px;
+}
+.card-content:hover{
+    transform: translateY(-3px);
+} 
+.card-title {
+    font-weight: 700;
+}
+.card-price p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.buy-button{
+    text-decoration: none;
+    padding: 5px 15px;
+    border: 2px solid #252525;
+    color: #252525;
+    border-radius: 25px;
+    transition: all 200ms ease;
+}
+.buy-button:hover{
+    color: #fff;
+    background-color: #252525;
+}
+strong {
+    background-color: #E73700;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+
+del {
+    color: #454545
+}
+.card-text {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
