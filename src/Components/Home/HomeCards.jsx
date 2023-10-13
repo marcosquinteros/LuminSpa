@@ -5,7 +5,7 @@ const productos = [
   {
     image:
       "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163028/z6cie3eyedslgaida7dr.png",
-    nombre: "Crema Hidratante Facial",
+    nombre: "Crema Hidratante",
     precio: 20.99,
     descuento: 15,
   },
@@ -26,7 +26,7 @@ const productos = [
   {
     image:
       "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163027/ddehiqm7hxb64anscmcy.png",
-    nombre: "Mascarilla Capilar Nutritiva",
+    nombre: "Mascarilla Capilar",
     precio: 9.99,
     descuento: 20,
   },

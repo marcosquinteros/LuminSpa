@@ -43,12 +43,12 @@
     transition: all 200ms ease;
 }
 .buy-button:hover{
-    color: #fff;
+    color: #f9c4c2;
     background-color: #252525;
 }
 strong {
-    background-color: #E73700;
-    color: #fff;
+    background-color: #252525;
+    color: #f9c4c2;
     padding: 5px 10px;
     border-radius: 25px;
 }
