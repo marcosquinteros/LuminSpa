@@ -3,21 +3,29 @@ import { Row, Col } from "react-bootstrap";
 
 const productos = [
   {
+    image:
+      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163028/z6cie3eyedslgaida7dr.png",
     nombre: "Crema Hidratante Facial",
     precio: 20.99,
     descuento: 15,
   },
   {
+    image:
+      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163027/ti48aqfw5yas0erdz0d9.png",
     nombre: "Champú Reparador",
     precio: 12.5,
     descuento: 10,
   },
   {
+    image:
+      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163028/lttyeixbx3rzhqgijobc.png",
     nombre: "Protector Solar SPF",
     precio: 18.75,
     descuento: 0,
   },
   {
+    image:
+      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163027/ddehiqm7hxb64anscmcy.png",
     nombre: "Mascarilla Capilar Nutritiva",
     precio: 9.99,
     descuento: 20,
@@ -26,15 +34,23 @@ const productos = [
 
 const HomeCards = () => {
   return (
-    <Row className="overflow-auto d-flex my-5">
+    <div
+      style={{
+        overflowX: "auto",
+        scrollSnapType: "x mandatory",
+        display: "flex",
+        scrollBehavior: "smooth",
+      }}
+      className="my-5 "
+    >
       {productos.map((producto, index) => (
-        <div key={index} className="col-lg-3 col-md-6 mb-4">
+        <div
+          key={index}
+          style={{ scrollSnapAlign: "start", width: "100%", maxWidth: "300px" }}
+          className="col-lg-3 col-md-6 m-2 "
+        >
           <div className="card h-100 card-content">
-            <img
-              className="card-img-top"
-              src="" // Actualiza la ruta de la imagen según tus necesidades
-              alt=""
-            />
+            <img className="card-img-top" src={producto.image} alt="" />
             <div className="card-body d-flex flex-column align-items-start">
               <h4 className="card-title">{producto.nombre}</h4>
               <div className="card-text">
@@ -59,7 +75,7 @@ const HomeCards = () => {
           </div>
         </div>
       ))}
-    </Row>
+    </div>
   );
 };
 
