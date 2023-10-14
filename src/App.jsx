@@ -14,6 +14,7 @@ import Register from "./Pages/Register";
 import Footer from "./Components/Layout/Footer";
 import Navbar from "./Components/Layout/Navbar";
 import Home from "./Pages/Home";
+import Categories from "./Pages/Categories"
 import Store from "./Pages/Store";
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Store" element={<Store />} />
+          <Route path="/Categories" element={<Categories />} />
+          <Route path="/Store/:categoria" element={<Store />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
         </Routes>
