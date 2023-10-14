@@ -6,10 +6,7 @@
     font-weight: 600;
 }
 
-.home_container img {
-    
 
-}
 .cta-btn {
     /* border: 2px solid #f9c4c2 !important; */
     border-radius: 5px !important;
@@ -61,3 +58,4 @@ del {
     align-items: center;
     gap: 9px;
 }
+
