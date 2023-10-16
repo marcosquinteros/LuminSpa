@@ -59,3 +59,29 @@ del {
     gap: 9px;
 }
 
+.img-services{
+ /* padding: 0 !important; */
+ /* border-radius: 8px; */
+}
+
+.services-container{
+    max-width: 100vw !important;
+    overflow-x: auto !important;
+}
+
+@keyframes swingAnimation {
+    0%, 100% {
+    transform:  rotate(0deg);
+    }
+    50% {
+      transform:  rotate(15deg); 
+    }
+    
+    
+  }
+  
+  .swing-svg {
+    animation: swingAnimation 8s ease-in-out infinite;
+    transform-origin:center !important;
+  }
+  

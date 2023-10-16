@@ -1,7 +1,9 @@
 import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import { MdWatchLater } from "react-icons/md";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const servicios = [
   {
     image:
@@ -36,18 +38,29 @@ const servicios = [
 ];
 
 const Services = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
+
   return (
-    <Row>
+    <Row className="img-services services-container">
       {servicios.map((servicio, index) => (
-        <Row key={index} className="bg-light my-2">
-          <Col lg={6} md={6}>
+        <Row
+          data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
+          key={index}
+          className="bg-light my-2"
+        >
+          <Col lg={6} md={6} className="order-lg-1 img-services ">
             <img
               src={servicio.image}
-              className="img-fluid"
+              className="img-fluid "
               alt={servicio.nombre}
+              style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
           </Col>
-          <Col lg={6} md={6}>
+          <Col lg={6} md={6} className="order-lg-1 order-md-2">
             <article className="servicio text-start">
               <h3 className="my-4">{servicio.nombre}</h3>
               <hr />
