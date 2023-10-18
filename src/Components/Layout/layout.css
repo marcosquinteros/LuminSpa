@@ -3,3 +3,19 @@
     color: #f9c4c2 !important;
 }
 
+.footer{
+    background-color: #252525;
+    color: #f9c4c2 !important;
+    
+}
+
+.footer li {
+    list-style: none !important;
+    /* text-align: center !important; */
+}
+
+.footer li a {
+    color: #fff;
+    text-decoration: none !important;
+}
+

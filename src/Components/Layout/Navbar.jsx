@@ -41,7 +41,9 @@ const Navbar = () => {
                 </button>
               </li>
               <li className="nav-item">
-                <button className="btn lumin-btn">Ingresar</button>
+                <Link to="/login" className="btn lumin-btn">
+                  Ingresar
+                </Link>
               </li>
             </div>
           </ul>
