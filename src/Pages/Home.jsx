@@ -36,7 +36,7 @@ const Home = () => {
             spy={true}
             // smooth={true}
             duration={600}
-            offset={100}
+            offset={0}
             className="btn lumin-btn px-5"
           >
             Ver servicios
@@ -50,10 +50,10 @@ const Home = () => {
         <HomeCards />
       </Row>
       <hr />
-      <h1 id="services" className=" p-2">
-        Nuestros servicios
-      </h1>
-      <Services />
+      <div id="services" className="servicios-container">
+        <h1 className=" p-2">Nuestros servicios</h1>
+        <Services />
+      </div>
     </div>
   );
 };
