@@ -25,10 +25,10 @@ const Home = () => {
           md={12}
           className="d-flex justify-content-center align-items-center flex-column"
         >
-          <svg className="swing-svg">
+          {/* <svg className="swing-svg">
             <image href={star} width="150" height="150" />
-          </svg>
-          <h1 className="hero-home p-2">Amor propio, Piel radiante</h1>
+          </svg> */}
+          <h1 className="hero-home my-2 p-2">Amor propio, Piel radiante</h1>
           <Link className="btn lumin-btn">Ver servicios</Link>
         </Col>
         <Col lg={6} md={12} className="d-flex ">
