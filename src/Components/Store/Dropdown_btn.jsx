@@ -8,7 +8,7 @@ const Dropdown_btn = () => {
     }
 
     return(
-        <div className="m-3">
+        <div className="m-3 mx-5">
             <label htmlFor="categoryDropdown">Selecciona una categoría:</label>
             <select 
             id="categoryDropdown"

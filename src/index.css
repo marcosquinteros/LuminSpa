@@ -114,6 +114,10 @@
   opacity: 1;
 }
 
+.products{
+  background-color: #bacceb;
+}
+
 /* Register */
 
 .contenedor-register-login{
