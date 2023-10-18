@@ -2,7 +2,9 @@ import { Row, Col, Button } from "react-bootstrap";
 import "./../Components/Home/home.css";
 import { useEffect } from "react";
 import star from "../assets/star.svg";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from "react-scroll"; // Importa Link de react-scroll
+
 import HomeCards from "../Components/Home/homeCards";
 import Carrousel from "../Components/Home/Carrousel";
 import Services from "../Components/Home/Services";
@@ -29,7 +31,16 @@ const Home = () => {
             <image href={star} width="150" height="150" />
           </svg> */}
           <h1 className="hero-home my-2 p-2">Amor propio, Piel radiante</h1>
-          <Link className="btn lumin-btn">Ver servicios</Link>
+          <Link
+            to="services"
+            spy={true}
+            // smooth={true}
+            duration={600}
+            offset={100}
+            className="btn lumin-btn px-5"
+          >
+            Ver servicios
+          </Link>
         </Col>
         <Col lg={6} md={12} className="d-flex ">
           <Carrousel />
@@ -39,7 +50,9 @@ const Home = () => {
         <HomeCards />
       </Row>
       <hr />
-      <h1 className=" p-2">Nuestros servicios</h1>
+      <h1 id="services" className=" p-2">
+        Nuestros servicios
+      </h1>
       <Services />
     </div>
   );

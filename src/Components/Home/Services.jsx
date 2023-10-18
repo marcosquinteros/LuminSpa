@@ -4,6 +4,7 @@ import { MdWatchLater } from "react-icons/md";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 const servicios = [
   {
     image:
@@ -77,7 +78,9 @@ const Services = () => {
                 {" "}
                 <del> {servicio.diasDisponibles.join(", ")}</del>
               </p>
-              <button className="lumin-btn btn my-2 px-5">Reservar</button>
+              <Link to="" className="lumin-btn btn my-2 px-5">
+                Reservar
+              </Link>
             </article>
           </Col>
         </Row>

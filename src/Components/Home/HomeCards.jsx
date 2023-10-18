@@ -80,7 +80,7 @@ const HomeCards = () => {
                     </p>
                   </div>
                 </div>
-                <a href="../html/404.html" className="buy-button">
+                <a href="" className="buy-button">
                   Comprar
                 </a>
               </div>
@@ -88,7 +88,7 @@ const HomeCards = () => {
           </div>
         ))}
       </div>
-      <Button className="btn lumin-btn">Ir a la tienda</Button>
+      <Button className="btn lumin-btn px-5">Ir a la tienda</Button>
     </div>
   );
 };
