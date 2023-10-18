@@ -116,6 +116,13 @@
 
 /* Register */
 
+.contenedor-register-login{
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 30px;
+background-color: white;
+}
+
 .boton-submit{
   text-decoration: none;
   padding: 5px 15px;
@@ -136,17 +143,20 @@
 
 }
 
-#check {
-  margin-right: 6px;
-}
-.checked {
-  background-color: #4CAF50;
-  color: white;
+#input {
+  border: 0.5mm solid #242020
 }
 
-.unchecked {
-  background-color: #f44336;
-  color: white;
+#input:focus{
+  box-shadow: 5px 5px 5px #f9c4c2;
+}
+
+#floatingSelect{
+  border: 0.5mm solid #242020
+}
+
+#floatingSelect:focus{
+  box-shadow: 5px 5px 5px #f9c4c2;
 }
 
 .imagen-register{
@@ -156,7 +166,6 @@
   display:flex;
 
 }
-
 /* Login */
 
 .login-img{
@@ -165,5 +174,6 @@
 
 .checkbox{
   display: flex;
-  flex-direction: column;
+  flex-direction:row;
 }
+
