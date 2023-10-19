@@ -1,44 +1,47 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import { MdWatchLater } from "react-icons/md";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
-const servicios = [
-  {
-    image:
-      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/upfsyt2jnkl5obxjz6bx.jpg",
-    nombre: "Tratamiento Facial",
-    descripcion:
-      "Un tratamiento facial completo que rejuvenece y revitaliza la piel de tu rostro.",
-    precio: "$80",
-    duracion: "90 minutos",
-    diasDisponibles: ["Martes", "Jueves", "Sábado"],
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/bl5yckp9fmucnponxpjl.jpg",
-    nombre: "Tratamiento Capilar",
-    descripcion:
-      "Un tratamiento capilar que cuida tu cabello y cuero cabelludo.",
-    precio: "$50",
-    duracion: "45 minutos",
-    diasDisponibles: ["Lunes", "Miércoles", "Viernes", "Sábado"],
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/l858g8owedjhqyvbjpmm.jpg",
-    nombre: "Tratamiento Corporal",
-    descripcion:
-      "Un tratamiento corporal relajante que revitaliza tu piel y alivia la tensión muscular.",
-    precio: "$60",
-    duracion: "60 minutos",
-    diasDisponibles: ["Lunes", "Miércoles", "Viernes"],
-  },
-];
+import axios from "axios";
+import ResenasServicio from "./Resenas";
 
 const Services = () => {
+  const [servicios, setServicios] = useState([]);
+  const [mostrarResenas, setMostrarResenas] = useState(false);
+  const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
+  const [calificacionesDelServicio, setCalificacionesDelServicio] = useState(
+    []
+  );
+
+  const cargarCalificacionesDelServicio = async (servicioId) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3001/calificaciones?servicioId=${servicioId}`
+      );
+      setCalificacionesDelServicio(response.data);
+      setMostrarResenas(true);
+    } catch (error) {
+      console.error("Error al cargar las calificaciones del servicio:", error);
+    }
+  };
+
+  const handleVerResenas = (servicioId) => {
+    setServicioSeleccionado(servicioId);
+    setMostrarResenas(true);
+  };
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/servicios")
+      .then((response) => {
+        setServicios(response.data);
+      })
+      .catch((error) => {
+        console.error("error getting services", error);
+      });
+  }, []);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -46,7 +49,7 @@ const Services = () => {
   });
 
   return (
-    <Row className="img-services services-container">
+    <Row className="img-services services-container mb-5">
       {servicios.map((servicio, index) => (
         <Row
           data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
@@ -81,6 +84,15 @@ const Services = () => {
               <Link to="" className="lumin-btn btn my-2 px-5">
                 Reservar
               </Link>
+              <button onClick={() => handleVerResenas(servicio.id)}>
+                Ver Reseñas
+              </button>
+              {mostrarResenas && servicio.id === servicioSeleccionado && (
+                <ResenasServicio
+                  servicioId={servicio.id}
+                  calificaciones={calificacionesDelServicio}
+                />
+              )}
             </article>
           </Col>
         </Row>
