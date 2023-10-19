@@ -16,6 +16,7 @@ import Navbar from "./Components/Layout/Navbar";
 import Home from "./Pages/Home";
 import Categories from "./Pages/Categories"
 import Store from "./Pages/Store";
+import Contacto from "./Pages/Contacto";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/Store/:categoria" element={<Store />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
+          <Route path="/Contacto" element={<Contacto />} />
         </Routes>
         <Footer pathIndex="/Inicio" pathNosotros="/Nosotros" pathError="/*" />
       </Router>
