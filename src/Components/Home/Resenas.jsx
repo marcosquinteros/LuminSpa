@@ -1,28 +1,31 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const ResenasServicio = ({ servicioId, calificaciones }) => {
+const ResenasServicio = ({
+  servicioId,
+  calificaciones,
+  actualizarCalificaciones,
+}) => {
   const [nombre, setNombre] = useState("");
   const [mensaje, setMensaje] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const enviarResena = async () => {
-    if (nombre && mensaje && calificacion > 0) {
-      // Construye el objeto de reseña
+    if (nombre && mensaje) {
       const nuevaResena = {
         servicioId,
-        calificacion,
         comentario: mensaje,
         usuario: nombre,
       };
-
+      console.log(nuevaResena);
       try {
         const response = await axios.post(
           "http://localhost:3001/calificaciones",
           nuevaResena
-        ); // Ajusta la URL al servidor JSON
-
+        );
         if (response.status === 201) {
           actualizarCalificaciones([...calificaciones, response.data]);
+          setShowModal(false);
         } else {
           console.error("No se pudo agregar la reseña.");
         }
@@ -34,7 +37,6 @@ const ResenasServicio = ({ servicioId, calificaciones }) => {
 
   return (
     <div>
-      <h4>Reseñas del Servicio</h4>
       {calificaciones.map((resena, index) => (
         <div key={index}>
           <p>Calificación: {resena.calificacion}</p>
