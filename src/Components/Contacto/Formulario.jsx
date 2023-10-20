@@ -23,7 +23,7 @@ export const ContactUs = () => {
 return (
     <div>
         
-        <form className='formulario' autoComplete="off" ref={form} onSubmit={sendEmail}>
+        <form className='formulario' ref={form} onSubmit={sendEmail}>
             <label className="formulario-label"> Nombre Completo: </label>
             <input type="text" name="user_name" className='input-form'/>
             <label> Correo Electronico: </label>
