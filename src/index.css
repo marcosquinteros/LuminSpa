@@ -181,3 +181,75 @@ background-color: white;
   flex-direction:row;
 }
 
+
+/* Contacto */
+
+.input-form {
+  border-radius: 5px;
+  margin: 12px;
+  display: flex;
+  font-family: sans-serif;
+  border: black solid 2px;
+  height: 30px;
+  width: 300px;
+  text-transform: capitalize;
+  text-indent: 5px;
+}
+
+.mensaje-form {
+  border-radius: 5px;
+  display: flex;
+  margin: 12px;
+  font-family: sans-serif;
+  border: black solid 2px;
+  height: 100px;
+  width: 300px;
+  text-transform: capitalize;
+  text-indent: 5px;
+}
+
+.imagen-contacto {
+  height: 520px;
+  border-radius: 5px;
+  box-shadow: #18172b 7px 7px 20px;
+  margin: 50px;
+}
+
+.formulario{
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  height: 450px;
+  font-family: sans-serif;
+  font-size: large;
+}
+
+.formulario-label {
+  margin-top: 50px;
+}
+
+.success-message {
+  font-family: sans-serif;
+  font-size: 15px;
+  color: black;
+  margin-top: 15px;
+}
+
+/* NOSOTROS */
+
+.section1 {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Estilos para la segunda sección */
+.section2 {
+  background-color: #e8f5e9;
+  padding: 20px;
+  border-bottom: 2px solid #ccc;
+}
+
+/* Estilos para la tercera sección */
+.section3 {
+  background-color: #f0e3e3;
+  padding: 20px;
+}
