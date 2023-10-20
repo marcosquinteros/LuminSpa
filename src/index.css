@@ -114,6 +114,74 @@
   opacity: 1;
 }
 
+.products{
+  background-color: #bacceb;
+}
+
+/* Register */
+
+.contenedor-register-login{
+padding-left: 30px;
+padding-right: 30px;
+padding-bottom: 30px;
+background-color: white;
+}
+
+.boton-submit{
+  text-decoration: none;
+  padding: 5px 15px;
+  border: 2px solid #252525;
+  color: #252525;
+  border-radius: 25px;
+  transition: all 200ms ease;
+  margin-top: 20px;
+}
+.boton-submit:hover{
+  color: #f9c4c2;
+  background-color: #252525;
+}
+.texto-register-login {
+  display: flex;
+  justify-content: start;
+  padding-top: 20px ;
+
+}
+
+#input {
+  border: 0.5mm solid #242020
+}
+
+#input:focus{
+  box-shadow: 5px 5px 5px #f9c4c2;
+}
+
+#floatingSelect{
+  border: 0.5mm solid #242020
+}
+
+#floatingSelect:focus{
+  box-shadow: 5px 5px 5px #f9c4c2;
+}
+
+.imagen-register{
+  padding-top: 20px;
+}
+.div-sexo{
+  display:flex;
+
+}
+/* Login */
+
+.login-img{
+  padding-top: 20px;
+}
+
+.checkbox{
+  display: flex;
+  flex-direction:row;
+}
+
+
 /* Contacto */
 
 .input-form {

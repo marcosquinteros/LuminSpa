@@ -1,6 +1,7 @@
-import React from "react";
+import { useEffect } from "react";
 import { Row, Col, Button } from "react-bootstrap";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const productos = [
   {
     image:
@@ -33,6 +34,11 @@ const productos = [
 ];
 
 const HomeCards = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  });
   return (
     <div className="cards-container">
       <div
@@ -52,6 +58,7 @@ const HomeCards = () => {
               width: "100%",
               maxWidth: "300px",
             }}
+            data-aos="fade-up"
             className="col-lg-3 col-md-6 m-2 "
           >
             <div className="card h-100 card-content">
@@ -73,7 +80,7 @@ const HomeCards = () => {
                     </p>
                   </div>
                 </div>
-                <a href="../html/404.html" className="buy-button">
+                <a href="" className="buy-button">
                   Comprar
                 </a>
               </div>
@@ -81,7 +88,7 @@ const HomeCards = () => {
           </div>
         ))}
       </div>
-      <Button className="btn lumin-btn">Ir a la tienda</Button>
+      <Button className="btn lumin-btn px-5">Ir a la tienda</Button>
     </div>
   );
 };

@@ -1,25 +1,18 @@
 import React from "react";
-import productos from "../Components/Store/Productos";
+import Productos from "../Components/Store/Productos";
+import Dropdown_btn from "../Components/Store/Dropdown_btn";
 
-class Store extends React.Component {
-  render() {
-    const categoria = this.props.match.params.categoria;
-
-    const productosFiltrados = productos.filter(
-      (producto) => producto.categoria === categoria
-    );
-
-    return (
-      <div>
-        <h2>Tienda - Categoría: {categoria}</h2>
-        <ul>
-          {productosFiltrados.map((producto, index) => (
-            <li key={index}>{producto.nombre}</li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
+const Store = () =>{
+  return(
+  <div className="container-fluid column p-0 overflow-x-hidden">
+    <div className="container-fluid d-flex justify-content-start-lg mt-3 mx-3">
+      <Dropdown_btn />
+    </div>
+    <div className="container-fluid column pt-5">
+        <Productos />
+    </div>
+  </div>
+  )
 }
 
 export default Store;
