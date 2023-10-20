@@ -1,10 +1,19 @@
 import React, { useState }  from "react";
 
-const Dropdown_btn = () => {
+const Dropdown_btn = ({ onCategoryChange }) => {
     const [selectedCategory, setSelectedCategory] = useState('');
+
+    const filterResult = (categoria) => {
+        const result = Products.filter((curData)=>{
+            return curData.categoria===categoria;
+        });
+        setData()
+    }
 
     const handleCategoryChange = (event) => {
         setSelectedCategory(event.target.value);
+        setSelectedCategory(category);
+        onCategoryChange(category);
     }
 
     return(
@@ -15,10 +24,13 @@ const Dropdown_btn = () => {
             className="form-select"
             value={selectedCategory}
             onChange={handleCategoryChange}>
-                <option value="">Elige una categoría</option>
-                <option value="cabello">Cabello</option>
-                <option value="cara">Cara</option>
-                <option value="cuerpo">Cuerpo</option>
+                <option value="">Seleccionar</option>
+                <option value="cabello" onClick={
+                    ()=>filterResult('cabello')}>Cabello</option>
+                <option value="cara" onClick={
+                    ()=>filterResult('cara')}>Cara</option>
+                <option value="cuerpo" onClick={
+                    ()=>filterResult('cuerpo')}>Cuerpo</option>
             </select>
         </div>
     )
