@@ -16,6 +16,8 @@ import Navbar from "./Components/Layout/Navbar";
 import Home from "./Pages/Home";
 import Categories from "./Pages/Categories"
 import Store from "./Pages/Store";
+import Contacto from "./Pages/Contacto";
+import Nosotros from "./Pages/Nosotros";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/Store" element={<Store />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
+          <Route path="/Contacto" element={<Contacto />} />
+          <Route path="/Nosotros" element={<Nosotros/>} />
         </Routes>
         <Footer pathIndex="/Inicio" pathNosotros="/Nosotros" pathError="/*" />
       </Router>

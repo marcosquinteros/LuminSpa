@@ -84,3 +84,12 @@ del {
     transform-origin:center !important;
   }
   
+  .resena-uno{
+    /* border: 2px solid #252525; */
+  }
+
+  .lumin-btn-secondary{
+    background-color: #f9c4c2 !important;
+    color: #252525 !important;
+    border: 1px solid #252525 !important;
+}

@@ -1,67 +1,113 @@
-import React from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Row, Col, Button, Modal, Form } from "react-bootstrap";
 import { MdWatchLater } from "react-icons/md";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
+import axios from "axios";
+import ResenasServicio from "./Resenas";
 import { Link } from "react-router-dom";
-const servicios = [
-  {
-    image:
-      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/upfsyt2jnkl5obxjz6bx.jpg",
-    nombre: "Tratamiento Facial",
-    descripcion:
-      "Un tratamiento facial completo que rejuvenece y revitaliza la piel de tu rostro.",
-    precio: "$80",
-    duracion: "90 minutos",
-    diasDisponibles: ["Martes", "Jueves", "Sábado"],
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/bl5yckp9fmucnponxpjl.jpg",
-    nombre: "Tratamiento Capilar",
-    descripcion:
-      "Un tratamiento capilar que cuida tu cabello y cuero cabelludo.",
-    precio: "$50",
-    duracion: "45 minutos",
-    diasDisponibles: ["Lunes", "Miércoles", "Viernes", "Sábado"],
-  },
-  {
-    image:
-      "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/l858g8owedjhqyvbjpmm.jpg",
-    nombre: "Tratamiento Corporal",
-    descripcion:
-      "Un tratamiento corporal relajante que revitaliza tu piel y alivia la tensión muscular.",
-    precio: "$60",
-    duracion: "60 minutos",
-    diasDisponibles: ["Lunes", "Miércoles", "Viernes"],
-  },
-];
+import Rating from "react-rating-stars-component";
 
 const Services = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
+  const [servicios, setServicios] = useState([]);
+  const [mostrarModal, setMostrarModal] = useState(false);
+  const [servicioSeleccionado, setServicioSeleccionado] = useState(null);
+  const [calificacionesDelServicio, setCalificacionesDelServicio] = useState(
+    []
+  );
+  const [nuevaResena, setNuevaResena] = useState({
+    usuario: "",
+    comentario: "",
+    calificacion: 0,
   });
 
+  const calcularPromedioCalificaciones = (servicioId) => {
+    const calificaciones = calificacionesDelServicio.filter(
+      (calificacion) => calificacion.servicioId === servicioId
+    );
+    if (calificaciones.length === 0) return 0;
+
+    const sumatoriaCalificaciones = calificaciones.reduce(
+      (total, calificacion) => total + calificacion.calificacion,
+      0
+    );
+    return sumatoriaCalificaciones / calificaciones.length;
+  };
+
+  const cargarCalificacionesDelServicio = async (servicioId) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3001/calificaciones?servicioId=${servicioId}`
+      );
+      setCalificacionesDelServicio(response.data);
+      setMostrarModal(true);
+    } catch (error) {
+      console.error("Error al cargar las calificaciones del servicio:", error);
+    }
+  };
+
+  const handleVerResenas = (servicioId) => {
+    setServicioSeleccionado(servicioId);
+    cargarCalificacionesDelServicio(servicioId);
+  };
+
+  const enviarResena = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/calificaciones",
+        {
+          servicioId: servicioSeleccionado,
+          ...nuevaResena,
+        }
+      );
+
+      if (response.status === 201) {
+        setCalificacionesDelServicio([
+          ...calificacionesDelServicio,
+          response.data,
+        ]);
+
+        const promedio = calcularPromedioCalificaciones(servicioSeleccionado);
+        setServicios((prevServicios) =>
+          prevServicios.map((servicio) =>
+            servicio.servicioId === servicioSeleccionado
+              ? { ...servicio, promedioCalificaciones: promedio }
+              : servicio
+          )
+        );
+
+        setNuevaResena({ usuario: "", comentario: "", calificacion: 0 });
+        setMostrarModal(false);
+      } else {
+        console.error("No se pudo agregar la reseña.");
+      }
+    } catch (error) {
+      console.error("Error al agregar la reseña:", error);
+    }
+  };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/servicios")
+      .then((response) => {
+        setServicios(response.data);
+      })
+      .catch((error) => {
+        console.error("Error al obtener los servicios", error);
+      });
+  }, []);
+
   return (
-    <Row className="img-services services-container">
+    <Row className="img-services services-container mb-5">
       {servicios.map((servicio, index) => (
-        <Row
-          data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
-          key={index}
-          className="bg-light my-2"
-        >
-          <Col lg={6} md={6} className="order-lg-1 img-services ">
+        <Row key={index} className="bg-light my-2">
+          <Col lg={6} md={6} className="img-services">
             <img
               src={servicio.image}
-              className="img-fluid "
+              className="img-fluid"
               alt={servicio.nombre}
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
           </Col>
-          <Col lg={6} md={6} className="order-lg-1 order-md-2">
+          <Col lg={6} md={6}>
             <article className="servicio text-start">
               <h3 className="my-4">{servicio.nombre}</h3>
               <hr />
@@ -71,20 +117,100 @@ const Services = () => {
                 <strong className="px-3"> {servicio.precio}</strong>
               </p>
               <div className="duration d-flex align-items-center">
-                <MdWatchLater size={28} />{" "}
+                <MdWatchLater size={28} />
                 <span className="mx-2">{servicio.duracion}</span>
               </div>
               <p>
-                {" "}
                 <del> {servicio.diasDisponibles.join(", ")}</del>
               </p>
               <Link to="" className="lumin-btn btn my-2 px-5">
                 Reservar
               </Link>
+              <button
+                className="lumin-btn-secondary btn"
+                onClick={() => handleVerResenas(servicio.servicioId)}
+              >
+                Calificar
+              </button>
+              <Rating
+                count={5}
+                value={servicio.promedioCalificaciones}
+                size={24}
+                edit={false}
+                color="#FFD700"
+                color2="#D3D3D3"
+              />
+              <div>
+                Promedio de Estrellas: {servicio.promedioCalificaciones}
+              </div>
             </article>
           </Col>
         </Row>
       ))}
+
+      <Modal show={mostrarModal} onHide={() => setMostrarModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title className="text-center">Dejá tu reseña</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {/* <h4 className="text-center">Deja tu reseña</h4> */}
+          <Form>
+            <Form.Group className="mx-1" controlId="formUsuario">
+              <Form.Label>Nombre</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Nombre de usuario"
+                value={nuevaResena.usuario}
+                onChange={(e) =>
+                  setNuevaResena({ ...nuevaResena, usuario: e.target.value })
+                }
+              />
+            </Form.Group>
+            <Form.Group className="mx-1" controlId="formComentario">
+              <Form.Label>Comentario</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Tu comentario"
+                value={nuevaResena.comentario}
+                onChange={(e) =>
+                  setNuevaResena({ ...nuevaResena, comentario: e.target.value })
+                }
+              />
+            </Form.Group>
+            <Form.Group className="mx-1" controlId="formCalificacion">
+              <Form.Label>Calificación</Form.Label>
+              <Rating
+                value={nuevaResena.calificacion}
+                count={5}
+                onChange={(value) =>
+                  setNuevaResena({ ...nuevaResena, calificacion: value })
+                }
+                size={24}
+                activeColor="#FFD700"
+              />
+            </Form.Group>
+            <Button className="btn lumin-btn" onClick={enviarResena}>
+              Enviar Reseña
+            </Button>
+          </Form>
+
+          {/* <div className="resenas-container d-flex flex-column">
+            {calificacionesDelServicio.map((resena, index) => (
+              <div key={index} className="resena-uno m-1 p-2 border">
+                {/* <p>Calificación: {resena.calificacion}</p>
+                <h5>{resena.usuario}</h5>
+                <p>{resena.comentario}</p>
+              </div>
+            ))}
+          </div> */}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setMostrarModal(false)}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Row>
   );
 };
