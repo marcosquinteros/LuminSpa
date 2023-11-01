@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Button, Modal, Form } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { MdWatchLater } from "react-icons/md";
 import axios from "axios";
 import Rating from "react-rating-stars-component";
@@ -95,12 +96,16 @@ const Services = () => {
       .catch((error) => {
         console.error("Error al obtener los servicios", error);
       });
-  }, []);
+  }, [nuevaResena]);
 
   return (
     <Row className="img-services services-container mb-5">
       {servicios.map((servicio, index) => (
-        <Row key={index} className="bg-light my-2">
+        <Row
+          key={index}
+          data-aos={index % 2 == 0 ? "fade-right" : "fade-left"}
+          className="bg-light my-2"
+        >
           <Col lg={6} md={6} className="img-services">
             <img
               src={servicio.image}
@@ -113,8 +118,8 @@ const Services = () => {
             <article className="servicio text-start">
               <h3 className="mt-4">{servicio.nombre}</h3>
               <Rating
-                count={5}
-                value={servicio.promedioCalificaciones}
+                count={servicio.promedioCalificaciones}
+                // value={servicio.promedioCalificaciones}
                 size={24}
                 edit={false}
                 color="#FFD700"
@@ -141,7 +146,10 @@ const Services = () => {
               >
                 Calificar
               </button>
-              <ReviewsAccordion servicioId={servicio.servicioId} />
+              <ReviewsAccordion
+                resena={nuevaResena}
+                servicioId={servicio.servicioId}
+              />
             </article>
           </Col>
         </Row>

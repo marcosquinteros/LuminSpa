@@ -44,36 +44,36 @@
   "calificaciones": [
     {
       "servicioId": 0,
-      "usuario": "test",
-      "comentario": "test 123",
+      "usuario": "Cristiano Ronaldo",
+      "comentario": "Muy buen servicio pibes. Los baños estaban un poco sucios igual. ",
       "calificacion": 3,
       "id": 1
     },
     {
-      "servicioId": 2,
-      "usuario": "test 2",
-      "comentario": "marcos",
+      "servicioId": 0,
+      "usuario": "Djokovic",
+      "comentario": "Excelente servicio! Muy buena atención y resultados 👌",
       "calificacion": 5,
       "id": 2
     },
     {
       "servicioId": 1,
-      "usuario": "otro test ",
-      "comentario": "anasheeee",
-      "calificacion": 1,
+      "usuario": "Elon Musk",
+      "comentario": "Que onda soy elon musk todo bien?",
+      "calificacion": 4,
       "id": 3
     },
     {
-      "servicioId": 0,
-      "usuario": "marcos",
-      "comentario": "aaaa",
-      "calificacion": 4,
+      "servicioId": 2,
+      "usuario": "Marcos",
+      "comentario": "Estafadores!!",
+      "calificacion": 1,
       "id": 4
     },
     {
-      "servicioId": 1,
-      "usuario": "marcos 4",
-      "comentario": "ofepoqrg",
+      "servicioId": 2,
+      "usuario": "Michael Jackson",
+      "comentario": "Hee hee! good servicio perros",
       "calificacion": 5,
       "id": 5
     }
