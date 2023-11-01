@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Button, Modal, Form } from "react-bootstrap";
+import Accordion from "react-bootstrap/Accordion";
+
 import { MdWatchLater } from "react-icons/md";
 import axios from "axios";
-import ResenasServicio from "./Resenas";
-import { Link } from "react-router-dom";
 import Rating from "react-rating-stars-component";
+import { Link } from "react-router-dom";
+import ReviewsAccordion from "./ReviewsAccordion";
 
 const Services = () => {
   const [servicios, setServicios] = useState([]);
@@ -109,11 +111,18 @@ const Services = () => {
           </Col>
           <Col lg={6} md={6}>
             <article className="servicio text-start">
-              <h3 className="my-4">{servicio.nombre}</h3>
+              <h3 className="mt-4">{servicio.nombre}</h3>
+              <Rating
+                count={5}
+                value={servicio.promedioCalificaciones}
+                size={24}
+                edit={false}
+                color="#FFD700"
+                color2="#D3D3D3"
+              />
               <hr />
               <p>{servicio.descripcion}</p>
               <p>
-                {" "}
                 <strong className="px-3"> {servicio.precio}</strong>
               </p>
               <div className="duration d-flex align-items-center">
@@ -132,17 +141,7 @@ const Services = () => {
               >
                 Calificar
               </button>
-              <Rating
-                count={5}
-                value={servicio.promedioCalificaciones}
-                size={24}
-                edit={false}
-                color="#FFD700"
-                color2="#D3D3D3"
-              />
-              <div>
-                Promedio de Estrellas: {servicio.promedioCalificaciones}
-              </div>
+              <ReviewsAccordion servicioId={servicio.servicioId} />
             </article>
           </Col>
         </Row>
@@ -153,7 +152,6 @@ const Services = () => {
           <Modal.Title className="text-center">Dejá tu reseña</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {/* <h4 className="text-center">Deja tu reseña</h4> */}
           <Form>
             <Form.Group className="mx-1" controlId="formUsuario">
               <Form.Label>Nombre</Form.Label>
@@ -194,16 +192,6 @@ const Services = () => {
               Enviar Reseña
             </Button>
           </Form>
-
-          {/* <div className="resenas-container d-flex flex-column">
-            {calificacionesDelServicio.map((resena, index) => (
-              <div key={index} className="resena-uno m-1 p-2 border">
-                {/* <p>Calificación: {resena.calificacion}</p>
-                <h5>{resena.usuario}</h5>
-                <p>{resena.comentario}</p>
-              </div>
-            ))}
-          </div> */}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setMostrarModal(false)}>

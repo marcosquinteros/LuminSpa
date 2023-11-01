@@ -1,7 +1,7 @@
 {
   "servicios": [
     {
-      "servicioId": 1,
+      "servicioId": 0,
       "image": "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/upfsyt2jnkl5obxjz6bx.jpg",
       "nombre": "Tratamiento Facial",
       "descripcion": "Un tratamiento facial completo que rejuvenece y revitaliza la piel de tu rostro.",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "servicioId": 2,
+      "servicioId": 1,
       "image": "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/bl5yckp9fmucnponxpjl.jpg",
       "nombre": "Tratamiento Capilar",
       "descripcion": "Un tratamiento capilar que cuida tu cabello y cuero cabelludo.",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "servicioId": 3,
+      "servicioId": 2,
       "image": "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/l858g8owedjhqyvbjpmm.jpg",
       "nombre": "Tratamiento Corporal",
       "descripcion": "Un tratamiento corporal relajante que revitaliza tu piel y alivia la tensión muscular.",
@@ -43,46 +43,39 @@
   ],
   "calificaciones": [
     {
-      "id": 1,
-      "servicioId": 1,
-      "calificacion": 5,
-      "comentario": "Excelente servicio",
-      "usuario": "Usuario1"
+      "servicioId": 0,
+      "usuario": "test",
+      "comentario": "test 123",
+      "calificacion": 3,
+      "id": 1
     },
     {
-      "servicioId": 1,
-      "usuario": "reseña",
-      "comentario": "marcosqd",
-      "calificacion": 4,
+      "servicioId": 2,
+      "usuario": "test 2",
+      "comentario": "marcos",
+      "calificacion": 5,
       "id": 2
     },
     {
       "servicioId": 1,
-      "usuario": "MARCOS",
-      "comentario": "MARCOS\n",
-      "calificacion": 3,
+      "usuario": "otro test ",
+      "comentario": "anasheeee",
+      "calificacion": 1,
       "id": 3
     },
     {
-      "servicioId": 1,
-      "usuario": "TEST",
-      "comentario": "TEWFE",
-      "calificacion": 3,
+      "servicioId": 0,
+      "usuario": "marcos",
+      "comentario": "aaaa",
+      "calificacion": 4,
       "id": 4
     },
     {
-      "servicioId": 2,
-      "usuario": "marcos",
-      "comentario": "marcosmarcos",
-      "calificacion": 2,
-      "id": 5
-    },
-    {
       "servicioId": 1,
-      "usuario": "new res",
-      "comentario": "dqw\n",
-      "calificacion": 4,
-      "id": 6
+      "usuario": "marcos 4",
+      "comentario": "ofepoqrg",
+      "calificacion": 5,
+      "id": 5
     }
   ]
 }
