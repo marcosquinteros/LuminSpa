@@ -8,6 +8,7 @@ import axios from "axios";
 import Rating from "react-rating-stars-component";
 import { Link } from "react-router-dom";
 import ReviewsAccordion from "./ReviewsAccordion";
+import ReservaServicio from "./ReservaServicio";
 
 const Services = () => {
   const [servicios, setServicios] = useState([]);
@@ -86,7 +87,9 @@ const Services = () => {
       console.error("Error al agregar la reseña:", error);
     }
   };
-
+  const handleReservaExitosa = () => {
+    alert("Reserva exitosa. Se ha almacenado en localStorage.");
+  };
   useEffect(() => {
     axios
       .get("http://localhost:3001/servicios")
@@ -137,11 +140,14 @@ const Services = () => {
               <p>
                 <del> {servicio.diasDisponibles.join(", ")}</del>
               </p>
-              <Link to="" className="lumin-btn btn my-2 px-5">
-                Reservar
-              </Link>
+              {/* <button className="lumin-btn btn my-2 px-5">Reservar</button> */}
+              <ReservaServicio
+                key={servicio.id}
+                servicio={servicio}
+                onReservar={handleReservaExitosa}
+              />
               <button
-                className="lumin-btn-secondary btn"
+                className="lumin-btn-secondary mx-2 btn"
                 onClick={() => handleVerResenas(servicio.servicioId)}
               >
                 Calificar

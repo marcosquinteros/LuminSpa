@@ -30,14 +30,16 @@ const ReviewsAccordion = ({ servicioId, resena }) => {
           {reviews.length > 0 ? (
             reviews.map((review, index) => (
               <div className="review-container py-1" key={index}>
-                <div className="d-flex align-items-center justify-content-between mb-3">
-                  <strong>{review.usuario} </strong>
-                  <CalificacionConEstrellas
-                    calificacion={review.calificacion}
-                  />
+                <div className="box border p-3">
+                  <div className="d-flex align-items-center justify-content-between mb-3">
+                    <strong>{review.usuario} </strong>
+                    <CalificacionConEstrellas
+                      calificacion={review.calificacion}
+                    />
+                  </div>
+                  <p className="mx-2">{review.comentario}</p>
                 </div>
-                <p className="mx-2">{review.comentario}</p>
-                <hr />
+                {/* <hr /> */}
               </div>
             ))
           ) : (
