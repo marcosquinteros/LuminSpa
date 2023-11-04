@@ -1,36 +1,12 @@
 import React, { useState } from "react";
-import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
-import axios from "axios";
+
 import Products from "./Products";
+import { Link } from "react-router-dom";
 
 const StoreCat = () => {
   const [data, setData] = useState(Products);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const [preferenceId, setPreferenceId] = useState(null);
-  initMercadoPago("TEST-0415562c-63d7-4fd6-be12-218fa2b95f3d");
 
-  const createPreference = async (name, price) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:8080/create_preference",
-        {
-          description: name,
-          price: price,
-          quantity: 1,
-        }
-      );
-      const { id } = response.data;
-      return id;
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  const handleBuy = async (name, price) => {
-    const id = await createPreference(name, price);
-    if (id) {
-      setPreferenceId(id);
-    }
-  };
   const handleCategoryChange = (event) => {
     const category = event.target.value;
     setSelectedCategory(category);
@@ -86,15 +62,14 @@ const StoreCat = () => {
                     <h5 className="card-title">{nombre}</h5>
                     <p>Precio original: ${precio}</p>
                     <p className="card-dicount">{final_price}</p>
-                    <button
-                      onClick={() => handleBuy(nombre, final_price)}
+                    <Link
+                      to={`/Store/product/${product.id}`}
                       className="buy-button"
                     >
                       Comprar
-                    </button>
+                    </Link>
                   </div>
                 </div>
-                {preferenceId && <Wallet initialization={{ preferenceId }} />}
               </div>
             );
           })}
