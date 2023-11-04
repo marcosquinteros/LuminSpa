@@ -14,10 +14,11 @@ import Register from "./Pages/Register";
 import Footer from "./Components/Layout/Footer";
 import Navbar from "./Components/Layout/Navbar";
 import Home from "./Pages/Home";
-import Categories from "./Pages/Categories"
+import Categories from "./Pages/Categories";
 import Store from "./Pages/Store";
 import Contacto from "./Pages/Contacto";
 import Nosotros from "./Pages/Nosotros";
+import ProductDetail from "./Pages/ProductDetail";
 
 function App() {
   return (
@@ -28,10 +29,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Categories" element={<Categories />} />
           <Route path="/Store" element={<Store />} />
+          <Route path="/Store/product/:id" element={<ProductDetail />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Contacto" element={<Contacto />} />
-          <Route path="/Nosotros" element={<Nosotros/>} />
+          <Route path="/Nosotros" element={<Nosotros />} />
         </Routes>
         <Footer pathIndex="/Inicio" pathNosotros="/Nosotros" pathError="/*" />
       </Router>
