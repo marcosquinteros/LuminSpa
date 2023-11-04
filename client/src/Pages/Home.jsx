@@ -1,5 +1,5 @@
 import { Row, Col, Button } from "react-bootstrap";
-import "./../Components/Home/home.css";
+import "../Components/Home/home.css";
 import { useEffect } from "react";
 import star from "../assets/star.svg";
 // import { Link } from "react-router-dom";
