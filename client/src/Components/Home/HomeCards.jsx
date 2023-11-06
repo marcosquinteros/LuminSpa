@@ -96,7 +96,7 @@ const HomeCards = () => {
           </div>
         ))}
       </div>
-      <Link to="/store" className="btn lumin-btn px-5">
+      <Link to="/categories" className="btn lumin-btn px-5">
         Ir a la tienda
       </Link>
     </div>

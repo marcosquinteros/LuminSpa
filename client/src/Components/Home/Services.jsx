@@ -138,17 +138,19 @@ const Services = () => {
                 <span className="mx-2">{servicio.duracion}</span>
               </div>
               {/* <button className="lumin-btn btn my-2 px-5">Reservar</button> */}
-              <ReservaServicio
-                key={servicio.id}
-                servicio={servicio}
-                onReservar={handleReservaExitosa}
-              />
-              <button
-                className="lumin-btn-secondary mx-2 btn"
-                onClick={() => handleVerResenas(servicio.servicioId)}
-              >
-                Calificar
-              </button>
+              <div className="d-flex justify-content-between">
+                <ReservaServicio
+                  key={servicio.id}
+                  servicio={servicio}
+                  onReservar={handleReservaExitosa}
+                />
+                <button
+                  className="lumin-btn-secondary btn mt-2"
+                  onClick={() => handleVerResenas(servicio.servicioId)}
+                >
+                  Calificar
+                </button>
+              </div>
               <ReviewsAccordion
                 resena={nuevaResena}
                 servicio={servicio}
