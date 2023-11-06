@@ -7,6 +7,7 @@ const Products = [
     precio: 20.99,
     descuento: 15,
     categoria: "cara",
+    descripcion: "Una crema hidratante de alta calidad para tu rostro. Esta crema está diseñada para mantener tu piel hidratada y suave durante todo el día. Contiene ingredientes naturales que ayudan a combatir la sequedad de la piel y a prevenir los signos del envejecimiento. Ideal para una piel saludable y radiante."
   },
   {
     id: 1,
@@ -16,6 +17,7 @@ const Products = [
     precio: 12.5,
     descuento: 10,
     categoria: "cabello",
+    descripcion: "Este champú reparador es perfecto para revitalizar tu cabello. Contiene ingredientes especiales que fortalecen y nutren tus hebras capilares, dejándolas suaves y brillantes. Además, ayuda a reparar el daño causado por el uso frecuente de productos químicos y calor."
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ const Products = [
     precio: 18.75,
     descuento: 0,
     categoria: "cara",
+    descripcion: "Nuestro protector solar SPF es esencial para proteger tu piel de los dañinos rayos UV. Ofrece una protección efectiva contra el sol, evitando quemaduras y el envejecimiento prematuro de la piel. Además, es suave y no graso, ideal para uso diario."
   },
   {
     id: 3,
@@ -34,6 +37,7 @@ const Products = [
     precio: 9.99,
     descuento: 20,
     categoria: "cabello",
+    descripcion: "Esta mascarilla capilar es la solución perfecta para revitalizar tu cabello. Enriquecida con ingredientes naturales, restaura la vitalidad y el brillo de tu cabello. Especialmente diseñada para cabello dañado o seco, esta mascarilla dejará tu cabello suave y saludable."
   },
   {
     id: 4,
@@ -43,6 +47,7 @@ const Products = [
     precio: 15.99,
     descuento: 10,
     categoria: "cuerpo",
+    descripcion: "Nuestro protector solar en spray es fácil de aplicar y ofrece una protección eficaz contra los rayos UV. Perfecto para días soleados en la playa o la piscina, este protector solar mantiene tu piel segura y protegida del sol."
   },
   {
     id: 5,
@@ -52,6 +57,7 @@ const Products = [
     precio: 9.5,
     descuento: 5,
     categoria: "cuerpo",
+    descripcion: "Nuestra loción hidratante es perfecta para mantener tu piel suave y nutrida. Formulada con ingredientes de alta calidad, esta loción se absorbe rápidamente, dejando tu piel hidratada y fresca. Ideal para mantener la piel seca a raya."
   },
   {
     id: 6,
@@ -61,6 +67,7 @@ const Products = [
     precio: 14.25,
     descuento: 15,
     categoria: "cuerpo",
+    descripcion: "Nuestro gel de ducha exfoliante es perfecto para una ducha rejuvenecedora. Con ingredientes exfoliantes suaves, elimina las impurezas de la piel y la deja fresca y suave. Disfruta de una experiencia de ducha renovadora con este gel de alta calidad."
   },
   {
     id: 7,
@@ -70,6 +77,7 @@ const Products = [
     precio: 12.99,
     descuento: 0,
     categoria: "cara",
+    descripcion: "Nuestro exfoliante facial con aloe vera y arroz es ideal para purificar y renovar tu piel. Las partículas exfoliantes eliminan suavemente las células muertas de la piel, dejándola fresca y radiante. Disfruta de una piel suave y revitalizada."
   },
   {
     id: 8,
@@ -79,7 +87,7 @@ const Products = [
     precio: 8.75,
     descuento: 10,
     categoria: "cabello",
-  },
-];
-
+    descripcion: "Nuestro acondicionador Elvive es la solución perfecta para mantener tu cabello suave y manejable. Formulado con ingredientes de alta calidad, este acondicionador ayuda a desenredar y nutrir tu cabello, dejándolo sedoso y brillante. Ideal para cabello seco o dañado, este producto es un aliado indispensable en tu rutina de cuidado capilar."
+  }]
+  
 export default Products;

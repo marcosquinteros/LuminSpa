@@ -109,6 +109,9 @@
   color: #626262;
 }
 
+.description-prod{
+  color: #626262;
+}
 
 .store-body:hover{
   transition: 0.5s ease-in-out;

@@ -79,6 +79,7 @@ function ProductDetail() {
               {preferenceId && <Wallet initialization={{ preferenceId }} />}
             </div>
           </div>
+          <h5 className="description-prod text-start mt-3">{product.descripcion}</h5>
         </Col>
       </Row>
     </div>
