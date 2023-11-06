@@ -137,9 +137,6 @@ const Services = () => {
                 <MdWatchLater size={28} />
                 <span className="mx-2">{servicio.duracion}</span>
               </div>
-              <p>
-                <del> {servicio.diasDisponibles.join(", ")}</del>
-              </p>
               {/* <button className="lumin-btn btn my-2 px-5">Reservar</button> */}
               <ReservaServicio
                 key={servicio.id}
@@ -154,6 +151,7 @@ const Services = () => {
               </button>
               <ReviewsAccordion
                 resena={nuevaResena}
+                servicio={servicio}
                 servicioId={servicio.servicioId}
               />
             </article>
