@@ -144,6 +144,7 @@ background-color: white;
   border-radius: 25px;
   transition: all 200ms ease;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .boton-submit:hover{
   color: #f9c4c2;
@@ -179,6 +180,8 @@ background-color: white;
   display:flex;
 
 }
+
+
 /* Login */
 
 .login-img{

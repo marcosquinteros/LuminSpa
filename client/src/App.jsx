@@ -19,10 +19,13 @@ import Store from "./Pages/Store";
 import Contacto from "./Pages/Contacto";
 import Nosotros from "./Pages/Nosotros";
 import ProductDetail from "./Pages/ProductDetail";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div className="App">
+      <ToastContainer/>
       <Router>
         <Navbar />
         <Routes>

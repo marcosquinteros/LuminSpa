@@ -25,7 +25,7 @@ import { useState } from "react";
         e.preventDefault();
         if(validar()) {
           
-fetch("http://localhost:3000/users/" + username).then((res)=> {
+fetch("http://localhost:3001/users/" + username).then((res)=> {
   return res.json();
 
 }).then((resp) => {

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const RegisterC = () => {
 
     const[name, setName] = useState("");
-    const[password, setPass] = useState("");
+    const[pass, setPass] = useState("");
     const[pass2, setPass2] = useState("");
     const[id, setId] = useState("");
     const[email, setEmail] = useState("");
@@ -23,7 +23,7 @@ const RegisterC = () => {
             isproceed=false;
             errormessage += 'Usuario. ' ;
         }
-        if(password == null || pass=='') {
+        if(pass == null || pass=='') {
             isproceed=false;
             errormessage += 'Contraseña. ' ;
         }
@@ -43,11 +43,11 @@ const RegisterC = () => {
 
     const handleSumbit=(e) => {
         e.preventDefault();
-        let regobj={id, name, password, pass2, email, sex};
+        let regobj={id, name, pass, pass2, email, sex};
 
         if (IsValid()) {
 
-fetch("http://localhost:3000/users", {
+fetch("http://localhost:3001/users", {
     
 method: "POST",
 headers: {'content-type' : 'application/json'},
@@ -112,7 +112,7 @@ toast.error('Error:' + err.message );
                     </div>
                     <div className='col-lg-12'>
                         <p className="texto-register-login"> Contraseña </p>
-                        <input  value={password} onChange={e=>setPass(e.target.value)} id="input" placeholder='' type="text" name="password" className='form-control '/>                </div>
+                        <input  value={pass} onChange={e=>setPass(e.target.value)} id="input" placeholder='' type="text" name="password" className='form-control '/>                </div>
                 
                     <div>
                     <div className='col-lg-6'>
