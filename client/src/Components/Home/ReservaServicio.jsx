@@ -62,23 +62,22 @@ const ReservaServicio = ({ servicio, onReservar }) => {
       alert("Por favor, selecciona una fecha y hora para la reserva.");
     }
   };
-  console.log(servicio);
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <button className="btn mt-2 lumin-btn px-5" onClick={handleShow}>
         Reservar
-      </Button>
+      </button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Reservar Servicio</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="d-flex justify-content-between m-2">
+          <div className="d-flex align-items-center justify-content-between m-2">
             <h4>{servicio.nombre}</h4>
-            <h2> {servicio.precio}</h2>
+            <h2 className="border px-3 py-1"> ${servicio.precio}</h2>
           </div>
-          <hr />
+          {/* <hr /> */}
           <div className="d-flex align-items-center ">
             {/* <p className="m-2">Eleji la fecha</p> */}
           </div>
