@@ -1,9 +1,11 @@
 import React, { useRef,useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ContactUs = () => {
     const form = useRef();
-    const [successMessage, setSuccessMessage] = useState('');
+    // const [successMessage, setSuccessMessage] = useState('');
     
     const sendEmail = (e) => {
         e.preventDefault();
@@ -12,27 +14,42 @@ export const ContactUs = () => {
         .then((result) => {
             console.log(result.text);
             form.current.reset()
-            setSuccessMessage('Su mensaje fue enviado con éxito.');
+            // setSuccessMessage('Su mensaje fue enviado con éxito.');
         }, 
         (error) => {
             console.log(error.text);
-            setSuccessMessage('Hubo un error, intentelo nuevamente');
+            // setSuccessMessage('Hubo un error, intentelo nuevamente');
         });
     };
+
+    // const mensaje = () => {
+    //     toast.warn('🦄 Wow so easy!', {
+    //         position: "top-right",
+    //         autoClose: 5000,
+    //         hideProgressBar: false,
+    //         closeOnClick: true,
+    //         pauseOnHover: true,
+    //         draggable: true,
+    //         progress: undefined,
+    //         theme: "light",
+    //         });
+    // }
 
 return (
     <div>
         
         <form className='formulario' ref={form} onSubmit={sendEmail}>
-            <label className="formulario-label"> Nombre Completo: </label>
-            <input type="text" name="user_name" className='input-form'/>
-            <label> Correo Electronico: </label>
-            <input type="email" name="user_email" className='input-form'/>
-            <label> Mensaje: </label>
-            <textarea name="message" className='mensaje-form'/>
-            <input type="submit" value="Enviar" className="btn lumin-btn"/>
+            <label className="texto-register-login"> Nombre Completo: </label>
+            <input id= "input" type="text" name="user_name" className='form-control'/>
+            <label className="texto-register-login"> Correo Electronico: </label>
+            <input id= "input" type="email" name="user_email" className='form-control'/>
+            <label className="texto-register-login"> Mensaje: </label>
+            <textarea id='input' name="message" className='form-control'/>
+            <input type="submit" value="Enviar" className='boton-submit'/>
         </form>
-        {successMessage && <p className="success-message">{successMessage}</p>}
+        <ToastContainer />
+        {/* {successMessage && <p className="success-message">{successMessage}</p>} */}
+        
     </div>
 );
 };
