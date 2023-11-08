@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 const productos = [
   {
+    id: 0,
     image:
       "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163028/z6cie3eyedslgaida7dr.png",
     nombre: "Crema Hidratante",
@@ -11,6 +13,7 @@ const productos = [
     descuento: 15,
   },
   {
+    id: 1,
     image:
       "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163027/ti48aqfw5yas0erdz0d9.png",
     nombre: "Champú Reparador",
@@ -18,6 +21,7 @@ const productos = [
     descuento: 10,
   },
   {
+    id: 2,
     image:
       "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163028/lttyeixbx3rzhqgijobc.png",
     nombre: "Protector Solar SPF",
@@ -25,6 +29,7 @@ const productos = [
     descuento: 0,
   },
   {
+    id: 3,
     image:
       "https://res.cloudinary.com/dmmviigbv/image/upload/v1697163027/ddehiqm7hxb64anscmcy.png",
     nombre: "Mascarilla Capilar",
@@ -80,15 +85,20 @@ const HomeCards = () => {
                     </p>
                   </div>
                 </div>
-                <a href="" className="buy-button">
+                <Link
+                  to={`/Store/product/${producto.id}`}
+                  className="buy-button"
+                >
                   Comprar
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <Button className="btn lumin-btn px-5">Ir a la tienda</Button>
+      <Link to="/categories" className="btn lumin-btn px-5">
+        Ir a la tienda
+      </Link>
     </div>
   );
 };

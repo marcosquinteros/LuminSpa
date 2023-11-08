@@ -1,0 +1,84 @@
+{
+  "servicios": [
+    {
+      "servicioId": 0,
+      "image": "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/upfsyt2jnkl5obxjz6bx.jpg",
+      "nombre": "Tratamiento Facial",
+      "descripcion": "Un tratamiento facial completo que rejuvenece y revitaliza la piel de tu rostro.",
+      "precio": 80,
+      "duracion": "90 minutos",
+      "diasDisponibles": [
+        "Martes",
+        "Jueves",
+        "Sábado"
+      ]
+    },
+    {
+      "servicioId": 1,
+      "image": "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/bl5yckp9fmucnponxpjl.jpg",
+      "nombre": "Tratamiento Capilar",
+      "descripcion": "Un tratamiento capilar que cuida tu cabello y cuero cabelludo.",
+      "precio": 50,
+      "duracion": "45 minutos",
+      "diasDisponibles": [
+        "Lunes",
+        "Miércoles",
+        "Viernes",
+        "Sábado"
+      ]
+    },
+    {
+      "servicioId": 2,
+      "image": "https://res.cloudinary.com/dmmviigbv/image/upload/v1697324095/l858g8owedjhqyvbjpmm.jpg",
+      "nombre": "Tratamiento Corporal",
+      "descripcion": "Un tratamiento corporal relajante que revitaliza tu piel y alivia la tensión muscular.",
+      "precio": 60,
+      "duracion": "60 minutos",
+      "diasDisponibles": [
+        "Lunes",
+        "Miércoles",
+        "Viernes"
+      ]
+    }
+  ],
+  "calificaciones": [
+    {
+      "servicioId": 0,
+      "usuario": "Cristiano Ronaldo",
+      "comentario": "Muy buen servicio pibes. Los baños estaban un poco sucios igual. ",
+      "calificacion": 3,
+      "id": 1
+    },
+    {
+      "servicioId": 0,
+      "usuario": "Djokovic",
+      "comentario": "Excelente servicio! Muy buena atención y resultados 👌",
+      "calificacion": 5,
+      "id": 2
+    },
+    {
+      "servicioId": 1,
+      "usuario": "Elon Musk",
+      "comentario": "Que onda soy elon musk todo bien?",
+      "calificacion": 4,
+      "id": 3
+    },
+    {
+      "servicioId": 2,
+      "usuario": "Marcos",
+      "comentario": "Estafadores!!",
+      "calificacion": 1,
+      "id": 4
+    },
+    {
+      "servicioId": 2,
+      "usuario": "Michael Jackson",
+      "comentario": "Hee hee! good servicio perros",
+      "calificacion": 5,
+      "id": 5
+    }
+  ],
+  "users": [
+    
+  ]
+}

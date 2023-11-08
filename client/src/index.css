@@ -104,6 +104,15 @@
   opacity: 1;
 }
 
+.category-prod {
+  text-transform: uppercase !important;
+  color: #626262;
+}
+
+.description-prod{
+  color: #626262;
+}
+
 .store-body:hover{
   transition: 0.5s ease-in-out;
   opacity: 1;
@@ -114,8 +123,8 @@
   opacity: 1;
 }
 
-.products{
-  background-color: #bacceb;
+.card-img-top{
+  /* height: ; */
 }
 
 /* Register */
@@ -135,6 +144,7 @@ background-color: white;
   border-radius: 25px;
   transition: all 200ms ease;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 .boton-submit:hover{
   color: #f9c4c2;
@@ -170,6 +180,8 @@ background-color: white;
   display:flex;
 
 }
+
+
 /* Login */
 
 .login-img{
