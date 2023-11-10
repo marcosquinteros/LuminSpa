@@ -3,7 +3,7 @@ import "../Components/Home/home.css";
 import { useEffect } from "react";
 import star from "../assets/star.svg";
 // import { Link } from "react-router-dom";
-import { Link } from "react-scroll"; // Importa Link de react-scroll
+import { Link } from "react-scroll";
 
 import HomeCards from "../Components/Home/homeCards";
 import Carrousel from "../Components/Home/Carrousel";
