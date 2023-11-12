@@ -55,7 +55,7 @@ fetch("http://localhost:3001/users/" + username).then((res)=> {
               <div className="row gy-3">
               
               <div className="col-lg-6">
-                  <img src="https://res.cloudinary.com/dehmb7i5p/image/upload/v1697479172/codigo360/pexels-antoni-shkraba-5205700_hrbeav.jpg" alt="" className="login-img"/>
+                  <img  src="https://res.cloudinary.com/dehmb7i5p/image/upload/v1697479172/codigo360/pexels-antoni-shkraba-5205700_hrbeav.jpg" alt="" className="login-img"/>
               </div>
 
               <div className="col-lg-6">
@@ -78,7 +78,7 @@ fetch("http://localhost:3001/users/" + username).then((res)=> {
                     <div>
                     <Link
                         to="/register"
-                        className="btn lumin-btn"
+                        className="link-register-login"
                     >
                             ¿No creaste una cuenta? Apretá acá para registrarte
                     </Link>
