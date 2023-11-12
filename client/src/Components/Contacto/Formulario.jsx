@@ -1,39 +1,24 @@
-import React, { useRef,useState } from 'react';
+import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const ContactUs = () => {
     const form = useRef();
-    // const [successMessage, setSuccessMessage] = useState('');
-    
     const sendEmail = (e) => {
         e.preventDefault();
-
+    
     emailjs.sendForm('service_elkzilq', 'template_lfgx8ma', form.current, 'LhNhZm-e9mi7gab3M')
         .then((result) => {
             console.log(result.text);
             form.current.reset()
-            // setSuccessMessage('Su mensaje fue enviado con éxito.');
+            toast.success('El mensaje fue enviado con exito.')
         }, 
         (error) => {
             console.log(error.text);
-            // setSuccessMessage('Hubo un error, intentelo nuevamente');
+            toast.error('Hubo un error, intentelo nuevamente');
         });
     };
-
-    // const mensaje = () => {
-    //     toast.warn('🦄 Wow so easy!', {
-    //         position: "top-right",
-    //         autoClose: 5000,
-    //         hideProgressBar: false,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //         theme: "light",
-    //         });
-    // }
 
 return (
     <div>
@@ -47,9 +32,6 @@ return (
             <textarea id='input' name="message" className='form-control'/>
             <input type="submit" value="Enviar" className='boton-submit'/>
         </form>
-        <ToastContainer />
-        {/* {successMessage && <p className="success-message">{successMessage}</p>} */}
-        
     </div>
 );
 };
