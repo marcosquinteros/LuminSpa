@@ -20,12 +20,13 @@ import Contacto from "./Pages/Contacto";
 import Nosotros from "./Pages/Nosotros";
 import ProductDetail from "./Pages/ProductDetail";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import Error404 from "./Pages/Error404";
 
 function App() {
   return (
     <div className="App">
-      <ToastContainer/>
+      <ToastContainer />
       <Router>
         <Navbar />
         <Routes>
@@ -38,6 +39,7 @@ function App() {
           <Route path="/Register" element={<Register />} />
           <Route path="/Contacto" element={<Contacto />} />
           <Route path="/Nosotros" element={<Nosotros />} />
+          <Route path="/*" element={<Error404 />} />
         </Routes>
         <Footer pathIndex="/Inicio" pathNosotros="/Nosotros" pathError="/*" />
       </Router>
