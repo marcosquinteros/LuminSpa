@@ -84,26 +84,13 @@
       "calificacion": 3,
       "id": 6
     },
-    {
-      "servicioId": 0,
-      "usuario": "amñrwlñekfmq",
-      "comentario": "santiago",
-      "calificacion": 5,
-      "id": 7
-    },
+    
     {
       "servicioId": 1,
       "usuario": "Paul Nurken",
       "comentario": "Excelente servicio lagartos! :)",
       "calificacion": 5,
       "id": 8
-    },
-    {
-      "servicioId": 0,
-      "usuario": "danirep",
-      "comentario": "aaaparentemente",
-      "calificacion": 3,
-      "id": 9
     }
   ],
   "users": [

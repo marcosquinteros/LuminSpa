@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Collapse } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/images/logo-lumin.png";
+import { toast } from "react-toastify";
 
 import { MdShoppingCart, MdMenu } from "react-icons/md";
 import "./layout.css";
@@ -36,7 +37,12 @@ const Navbar = () => {
             </li>
             <div className="btns d-flex justify-content-between">
               <li className="nav-item">
-                <button className="btn cart">
+                <button
+                  className="btn cart"
+                  onClick={() => {
+                    toast.warning("Esta funcion aun está en desarrollo 🤖");
+                  }}
+                >
                   <MdShoppingCart size={23} />
                 </button>
               </li>

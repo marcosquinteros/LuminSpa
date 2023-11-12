@@ -131,7 +131,7 @@ const Services = () => {
               <hr />
               <p>{servicio.descripcion}</p>
               <p>
-                <strong className="px-3"> {servicio.precio}</strong>
+                <strong className="px-3"> ${servicio.precio}</strong>
               </p>
               <div className="duration d-flex align-items-center">
                 <MdWatchLater size={28} />
