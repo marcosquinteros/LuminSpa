@@ -83,16 +83,19 @@ toast.error('Error:' + err.message );
                                 <div>
                                     <label className="texto-register-login">Sexo</label>
                                     <br />
-                                       
-                                    <input className="form-check-input" type="radio" checked={sex==='masculino'} onChange={e=>setSex(e.target.value)} name="flexRadioDefault" value="masculino" />
-                                    <label className="form-check-label" htmlFor="masculino"> Masculino </label>
-                                </div>
+                                    <div >
+                                        <input className="form-check-input" type="radio" checked={sex==='masculino'} onChange={e=>setSex(e.target.value)} name="flexRadioDefault" value="masculino" />
+                                        <label id="masculino" className="form-check-label" htmlFor="masculino"> Masculino </label>
+                                        
+                                        <input className="form-check-input" type="radio" checked={sex==='femenino'} onChange={e=>setSex(e.target.value)} name="flexRadioDefault" value="femenino" />
+                                        <label id="femenino" className="form-check-label" htmlFor="femenino"> Femenino </label>
+
+                               
+                                    </div>   
+                                     </div>
 
                                 <div>
                                         
-                                    <input className="form-check-input" type="radio" checked={sex==='femenino'} onChange={e=>setSex(e.target.value)} name="flexRadioDefault" value="femenino" />
-                                    <label className="form-check-label" htmlFor="femenino"> Femenino </label>
-
                                 </div>
 
                             </div>
@@ -128,7 +131,7 @@ toast.error('Error:' + err.message );
                         
                     <Link
                         to="/login"
-                        className="btn lumin-btn px-5"
+                        className="link-register-login"
                     >
                         ¿Ya tenés una cuenta? Apretá acá para ingresar.
                     </Link>
@@ -137,10 +140,13 @@ toast.error('Error:' + err.message );
 
                     </div>
                     <div className="col-lg-6">
-                        <h1 className="titulo-register"> Registro </h1>
-                        <p> Brindanos un par de datos para comenzar. </p>
-                        <div className="imagen-register">
-                            <img src="https://res.cloudinary.com/dehmb7i5p/image/upload/v1697472156/codigo360/pexels-yan-krukau-7011186_uhjuws.jpg" alt="" /> 
+                        <div className="contenedor-imagen-register">
+                            <h1 className="titulo-register"> Registro </h1>
+                            <p> Brindanos un par de datos para comenzar. </p>
+                            <div className="imagen-register">
+                                <img src="https://res.cloudinary.com/dehmb7i5p/image/upload/v1697472156/codigo360/pexels-yan-krukau-7011186_uhjuws.jpg" alt="" /> 
+                            
+                        </div>
                         </div>
                     </div>
                     
